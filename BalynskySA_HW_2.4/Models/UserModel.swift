@@ -19,7 +19,7 @@ struct User {
 extension User {
     static func getUser() -> [User] {
  
-    return [User(login: "Alex", password: "1234")]
+    return [User(login: "Alexey", password: "1234")]
         
     }
 }

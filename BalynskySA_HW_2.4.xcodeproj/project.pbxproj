@@ -16,6 +16,7 @@
 		FA84F14B2480DF970050EF17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA84F1492480DF970050EF17 /* Main.storyboard */; };
 		FA84F14D2480DF990050EF17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA84F14C2480DF990050EF17 /* Assets.xcassets */; };
 		FA84F1502480DF990050EF17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA84F14E2480DF990050EF17 /* LaunchScreen.storyboard */; };
+		FACA23D8248391200022534B /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA23D7248391200022534B /* AboutMeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FA84F14C2480DF990050EF17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA84F14F2480DF990050EF17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA84F1512480DF990050EF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACA23D7248391200022534B /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				FA84F1472480DF970050EF17 /* ViewController.swift */,
 				FA2D9B3B2482DDFD0093CF42 /* SecondViewController.swift */,
+				FACA23D7248391200022534B /* AboutMeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				FA84F1442480DF970050EF17 /* AppDelegate.swift in Sources */,
 				FA4D830524825E48009D1521 /* UserModel.swift in Sources */,
 				FA2D9B3C2482DDFD0093CF42 /* SecondViewController.swift in Sources */,
+				FACA23D8248391200022534B /* AboutMeViewController.swift in Sources */,
 				FA84F1462480DF970050EF17 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

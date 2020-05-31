@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
+    
+    
     @IBAction func logInButtonPushed() {
         if  loginTF.text == logIn.first?.login,
             passwordTF.text == logIn.first?.password {
@@ -23,6 +25,9 @@ class ViewController: UIViewController {
         }
        
         showAlert(title: "Attention", message: "The password or login is incorrect")
+        passwordTF.text = ""
+        
+        
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
@@ -32,7 +37,7 @@ class ViewController: UIViewController {
     
     @IBAction func loginHelpAction(_ sender: UIButton) {
         
-        showAlert(title: "Notification", message: "Login: Alex")
+        showAlert(title: "Notification", message: "Login: Alexey")
         
     }
     
@@ -49,7 +54,8 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "userInfo" {
             let tabBarController = segue.destination as! UITabBarController
-        guard let userInfoVC = tabBarController.viewControllers?.first as? SecondViewController else {
+        guard let userInfoVC = tabBarController.viewControllers?.first as?
+            SecondViewController else {
             return
         }
         userInfoVC.login = loginTF.text
@@ -73,6 +79,6 @@ class ViewController: UIViewController {
         alert.addAction(okAlert)
         present(alert, animated: true, completion: nil)
     }
-
+    
 }
 
