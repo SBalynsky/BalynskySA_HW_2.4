@@ -10,28 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
+    let logIn = User.getUser()
    
     
     @IBOutlet weak var loginTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
     @IBAction func logInButtonPushed() {
-        if let value = loginTF.text, (passwordTF.text != nil)  {
-            if value == "Alex", passwordTF.text == "1234" {
-                performSegue(withIdentifier: "userInfo", sender: nil)
-            }
+        if  loginTF.text == logIn.first?.login,
+            passwordTF.text == logIn.first?.password {
+            performSegue(withIdentifier: "userInfo", sender: nil)
         }
-        let alertLogin = UIAlertController(title: "Attention",
-                                           message: "The password or login is incorrect",
-                                           preferredStyle: .alert)
-        let okAlertLogin = UIAlertAction(title: "Ok",
-                                         style: .default,
-                                         handler: nil)
-        
-        alertLogin.addAction(okAlertLogin)
-        present(alertLogin, animated: true, completion: nil)
-        
+       
+        showAlert(title: "Attention", message: "The password or login is incorrect")
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
@@ -40,27 +31,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginHelpAction(_ sender: UIButton) {
-        let alertLogin = UIAlertController(title: nil,
-                                           message: "Login: Alex",
-                                           preferredStyle: .alert)
-        let okAlertLogin = UIAlertAction(title: "Ok",
-                                         style: .default,
-                                         handler: nil)
         
-        alertLogin.addAction(okAlertLogin)
-        present(alertLogin, animated: true, completion: nil)
+        showAlert(title: "Notification", message: "Login: Alex")
         
     }
     
     @IBAction func passwordHelpAction(_ sender: UIButton) {
-        let alertPassword = UIAlertController(title: nil,
-                                              message: "Password: 1234",
-                                              preferredStyle: .alert)
-        let okAlertPassword = UIAlertAction(title: "Ok",
-                                            style: .default, handler: nil)
         
-        alertPassword.addAction(okAlertPassword)
-        present(alertPassword, animated: true, completion: nil)
+        showAlert(title: "Notification", message: "Password: 1234")
+        
     }
     
     override func viewDidLoad() {
@@ -78,9 +57,21 @@ class ViewController: UIViewController {
     }
     
     
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    
+    func showAlert(title: String, message: String)  {
+        let alert = UIAlertController(title: title,
+                                           message: message,
+                                           preferredStyle: .alert)
+        let okAlert = UIAlertAction(title: "Ok",
+                                         style: .default,
+                                         handler: nil)
+        
+        alert.addAction(okAlert)
+        present(alert, animated: true, completion: nil)
     }
 
 }
